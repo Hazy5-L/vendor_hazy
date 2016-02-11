@@ -60,6 +60,11 @@ PRODUCT_COPY_FILES += \
     vendor/hazy/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/hazy/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+# Hazy apps
+PRODUCT_PACKAGES += \
+    HCamera \
+    HManager
+
 # Required packages
 PRODUCT_PACKAGES += \
     Launcher3 \
@@ -147,6 +152,13 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+# Brand
+PRODUCT_BRAND ?= hazy
+
+ifndef ROM_BUILDTYPE
+    ROM_BUILDTYPE := Alpha
+endif
+
 # Versioning System
 PRODUCT_VERSION_MAJOR = 6.0.1
 PRODUCT_VERSION_MINOR = alpha
@@ -181,3 +193,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 EXTENDED_POST_PROCESS_PROPS := vendor/hazy/tools/process_props.py
 
+
+# Hazy apps
+# BUILD_PREBUILT += \
+#	$(LOCAL_PATH)/app/HCamera/HCamera.apk:system/app/HCamera/HCamera.apk \
+#	$(LOCAL_PATH)/app/HManager/HManager.apk:system/app/HManager/HManager.apk
