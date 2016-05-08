@@ -175,8 +175,8 @@ hazy_MOD_VERSION := hazy-$(hazy_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSIO
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.hazy.version=$(hazy_VERSION) \
-    ro.modversion=$(hazy_MOD_VERSION) \
+    ro.modversion=Hazy5-$(HAZY_VERSION) \
+    ro.hazy.version=Hazy5 \
     ro.hazy.buildtype=$(hazy_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/hazy/tools/process_props.py
